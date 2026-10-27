@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PHONEVAULT USA - Checkout</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a73e8',
+                        accent: '#27ae60',
+                        payred: '#d71010'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.icon">
+
+    <style>
+        body {
+            background: linear-gradient(180deg, #f4f7fb 0%, #eef2f7 100%);
+            min-height: 100vh;
+        }
+        
+        .field {
+            width: 100%;
+            height: 46px;
+            padding: 10px 14px;
+            font-size: 15px;
+            color: #333;
+            background-color: #f9fafb;
+            border: 1.5px solid #e2e5ea;
+            border-radius: 10px;
+            transition: all .25s ease;
+            box-sizing: border-box;
+        }
+        
+        .field::placeholder {
+            color: #a5adb8;
+        }
+        
+        .field:hover {
+            border-color: #c9d1dc;
+            background-color: #fff;
+        }
+        
+        .field:focus {
+            outline: none;
+            border-color: #1a73e8;
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, .12);
+        }
+        
+        .field.invalid {
+            border-color: #d71010;
+            box-shadow: 0 0 0 3px rgba(215, 16, 16, .12);
+        }
+        
+        select.field {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+        }
+        
+        .fade-in {
+            animation: fadeIn .45s ease both;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800">
+
+    <!-- ================= HEADER ================= -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+            <a href="./index.html" class="flex items-center gap-2">
+                <img src="./photo_2026-10-07_11-34-48-removebg-preview.png" alt="PHONEVAULT USA logo" class="h-9">
+                <span class="text-lg font-extrabold tracking-tight">PHONEVAULT <span class="text-primary">USA</span></span>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+                <a href="./index.html" class="hover:text-primary transition">Home</a>
+                <a href="./index.html#products" class="hover:text-primary transition">Products</a>
+                <a href="./index.html#categories" class="hover:text-primary transition">Categories</a>
+                <a href="./index.html#review" class="hover:text-primary transition">Reviews</a>
+            </nav>
+            <a href="./index.html" class="flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-primary transition">
+                <i class="fas fa-arrow-left"></i> Continue shopping
+            </a>
+        </div>
+    </header>
+
+    <!-- ================= CHECKOUT ================= -->
+    <main class="pt-24 pb-16 px-4">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Breadcrumb / steps -->
+            <div class="fade-in flex flex-wrap items-center gap-2 text-sm text-gray-500 mb-8">
+                <a href="./index.html" class="hover:text-primary transition font-medium">Cart</a>
+                <i class="fas fa-chevron-right text-[10px] text-gray-300"></i>
+                <span class="text-primary font-semibold">Information</span>
+                <i class="fas fa-chevron-right text-[10px] text-gray-300"></i>
+                <span>Delivery</span>
+                <i class="fas fa-chevron-right text-[10px] text-gray-300"></i>
+                <span>Payment</span>
+            </div>
+
+            <h1 class="fade-in text-3xl font-extrabold tracking-tight mb-8">
+                Checkout <span class="text-gray-400 font-medium text-2xl">— pay delivery now, rest on delivery</span>
+            </h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+
+                <!-- ============ LEFT: FORM ============ -->
+                <div class="lg:col-span-3 space-y-6 fade-in">
+
+                    <!-- Contact -->
+                    <section class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 p-6">
+                        <h2 class="flex items-center gap-3 text-lg font-bold mb-5">
+                            <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm"><i class="fas fa-user"></i></span> Contact information
+                        </h2>
+                        <input class="field" placeholder="Email" type="email" name="email" id="email">
+                        <label class="flex items-center gap-2 text-sm text-gray-600 mt-1 cursor-pointer">
+                            <input type="checkbox" class="accent-accent w-4 h-4">
+                            Keep me up to date on news and exclusive offers
+                        </label>
+                    </section>
+
+                    <!-- Address -->
+                    <section class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 p-6">
+                        <h2 class="flex items-center gap-3 text-lg font-bold mb-5">
+                            <span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center text-sm"><i class="fas fa-truck-fast"></i></span> Delivery address
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input class="field" placeholder="First Name" type="text" name="fname" id="fname">
+                            <input class="field" placeholder="Last Name" type="text" name="lname" id="lname">
+                            <input class="field sm:col-span-2" placeholder="House No" type="text" id="house-no">
+                            <input class="field sm:col-span-2" placeholder="Address" type="text" name="address" id="address">
+                            <input class="field" placeholder="Zip Code" type="text" id="zip">
+                            <input class="field" placeholder="City" type="text" id="city">
+                            <input class="field" placeholder="State" type="text" id="state">
+                            <div class="relative">
+                                <select class="field" name="subject" id="country">
+                                    <option value="">Country</option>
+                                    <option>USA</option>
+                                    <option>UK</option>
+                                    <option>Canada</option>
+                                    <option>Australia</option>
+                                </select>
+                            </div>
+                            <input class="field" placeholder="Phone Number" type="tel" name="phone" id="phone">
+                        </div>
+                        <label class="flex items-center gap-2 text-sm text-gray-600 mt-4 cursor-pointer">
+                            <input type="checkbox" class="accent-accent w-4 h-4">
+                            Save this information for next time
+                        </label>
+                    </section>
+
+                    <!-- Payment / COD -->
+                    <section class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 p-6">
+                        <h2 class="flex items-center gap-3 text-lg font-bold mb-3">
+                            <span class="w-8 h-8 rounded-full bg-accent/10 text-accent flex items-center justify-center text-sm"><i class="fas fa-hand-holding-dollar"></i></span> Payment — delivery fee only
+                        </h2>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-5">
+                            Pay only the <b class="text-gray-700">delivery fee</b> now ($20 for orders under $500, $35 for orders of $500 or more). The full order amount is <b class="text-gray-700">paid after delivery</b> (cash on delivery).
+                        </p>
+
+                        <!-- summary line -->
+                        <div id="pay-summary" class="pending flex items-center justify-center flex-wrap gap-2 rounded-xl border border-dashed border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-400 mb-5 transition">
+                            <i class="fas fa-truck"></i>
+                            <span id="pay-summary-text">Complete your details to see the delivery fee</span>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="./index.html" class="flex-1 inline-flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-gray-200 text-gray-600 font-semibold hover:border-primary hover:text-primary hover:bg-primary/5 transition">
+                                <i class="fas fa-arrow-left text-xs"></i> Return to Cart
+                            </a>
+                            <button id="pay-btn" type="button" onclick="goToCard()" disabled class="flex-[2] flex flex-col items-center justify-center py-3 rounded-xl text-white font-bold uppercase tracking-wide bg-gradient-to-br from-payred to-red-800 shadow-lg shadow-red-600/25 transition disabled:from-gray-300 disabled:to-gray-400 disabled:shadow-none disabled:cursor-not-allowed enabled:hover:-translate-y-0.5">
+                                <span>Pay with Visa / MasterCard</span>
+                                <span id="btn-fee" class="text-xs font-medium opacity-90 mt-1"></span>
+                                <span class="flex gap-3 text-2xl mt-1.5">
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- ============ RIGHT: ORDER SUMMARY ============ -->
+                <div class="lg:col-span-2 fade-in lg:sticky lg:top-24">
+                    <section class="bg-white rounded-2xl shadow-md ring-1 ring-gray-100 overflow-hidden">
+                        <div class="bg-gradient-to-r from-gray-900 to-gray-700 text-white px-6 py-4 flex items-center gap-3">
+                            <i class="fas fa-box-open"></i>
+                            <h2 class="font-bold">Order Summary</h2>
+                            <span id="badge-count" class="ml-auto text-xs bg-white/15 rounded-full px-3 py-1 font-semibold">0 items</span>
+                        </div>
+
+                        <div id="order-summary" class="px-6 py-4">
+                            <!-- injected cart items go here -->
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2 border-t border-gray-100 space-y-3 text-sm">
+                            <div class="flex justify-between text-gray-600">
+                                <span>Order Total</span>
+                                <span id="order-subtotal" class="font-semibold text-gray-800">$0.00</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <span>Delivery Fee</span>
+                                <span id="order-delivery" class="font-semibold text-payred">$0.00</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <span>Pay Now (Delivery Fee)</span>
+                                <span id="order-paynow" class="font-semibold text-payred">$0.00</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-3 border-t border-dashed border-gray-200">
+                                <span class="font-bold">Due After Delivery</span>
+                                <span id="order-total" class="text-2xl font-extrabold">$0.00</span>
+                            </div>
+
+                            <div class="mt-3 flex items-start gap-2 rounded-xl bg-emerald-50 border border-emerald-100 p-3 text-xs text-emerald-800">
+                                <i class="fas fa-shield-halved mt-0.5"></i>
+                                <span>Cash on delivery available. You pay only the delivery fee today — the full amount is collected when your order arrives.</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8 text-sm">
+            <div>
+                <h3 class="text-white font-bold mb-3">PHONEVAULT USA</h3>
+                <p>Thank you for shopping with us. Premium phones, delivered to your door.</p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold mb-3">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="./index.html" class="hover:text-white transition">Home</a></li>
+                    <li><a href="./index.html#products" class="hover:text-white transition">Products</a></li>
+                    <li><a href="./index.html#categories" class="hover:text-white transition">Categories</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-bold mb-3">Follow Us</h3>
+                <div class="flex gap-3">
+                    <a href="#" class="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 text-center py-4 text-xs">2026 | All rights reserved</div>
+    </footer>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        // =====================================================
+        //  CHECKOUT PAGE SCRIPT
+        //  - Reads cart from localStorage "checkoutCart"
+        //    (falls back to legacy "cart" key)
+        //  - Renders product NAME + IMAGE for every item
+        //    (auto-detects common field names, graceful
+        //     "No image" placeholder if missing)
+        //  - Delivery fee: $20 if total < $500, $35 if >= $500
+        //  - Full order amount due AFTER delivery (COD)
+        //  - Pay button disabled until form is complete & valid
+        // =====================================================
+
+        const FEE_UNDER_500 = 20;
+        const FEE_500_OR_MORE = 35;
+
+        const fmt = n => "$" + n.toLocaleString("en-US", {
+            minimumFractionDigits: 2
+        });
+
+        function calcDeliveryFee(total) {
+            return total < 500 ? FEE_UNDER_500 : FEE_500_OR_MORE;
+        }
+
+        function loadCheckoutCart() {
+            try {
+                let data = JSON.parse(localStorage.getItem("checkoutCart"));
+                if (!Array.isArray(data) || data.length === 0) {
+                    data = JSON.parse(localStorage.getItem("cart")); // legacy fallback
+                }
+                return Array.isArray(data) ? data : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        // ---------- CART RENDERING + TOTALS ----------
+        (function() {
+            const checkoutCart = loadCheckoutCart();
+            const summary = document.getElementById("order-summary");
+            const subtotalEl = document.getElementById("order-subtotal");
+            const deliveryEl = document.getElementById("order-delivery");
+            const payNowEl = document.getElementById("order-paynow");
+            const totalEl = document.getElementById("order-total");
+            const badgeEl = document.getElementById("badge-count");
+            let total = 0;
+            let totalQty = 0;
+
+            if (checkoutCart.length === 0) {
+                summary.innerHTML = `
+                    <div class="text-center py-10">
+                        <i class="fas fa-cart-shopping text-5xl text-gray-200 mb-4"></i>
+                        <p class="text-gray-500 font-medium">Your cart is empty.</p>
+                        <a href="./index.html"
+                           class="inline-flex items-center gap-2 mt-4 px-5 py-2.5 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-blue-700 transition">
+                            <i class="fas fa-store"></i> Go shopping
+                        </a>
+                    </div>`;
+            } else {
+                checkoutCart.forEach(item => {
+                    const qty = Number((item && item.qty) || (item && item.quantity)) || 1;
+                    const price = Number((item && item.price) || (item && item.cost)) || 0;
+                    const lineTotal = price * qty;
+                    total += lineTotal;
+                    totalQty += qty;
+
+                    // auto-detect the image field (whatever the store page used)
+                    const img = item.image || item.img || item.picture || item.photo || item.url ||
+                        (item.product && item.product.image) || '';
+
+                    // auto-detect the name field
+                    const name = item.name || item.title || item.productName ||
+                        (item.product && item.product.name) || 'Product';
+
+                    const row = document.createElement("div");
+                    row.className = "flex items-center gap-4 py-3 border-b border-gray-100 last:border-0";
+                    row.innerHTML = `
+                        <img src="${img}" alt="${name}"
+                             class="w-16 h-16 rounded-xl object-cover bg-gray-100 flex-shrink-0"
+                             onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2264%22 height=%2264%22%3E%3Crect fill=%22%23e5e7eb%22 width=%2264%22 height=%2264%22/%3E%3Ctext x=%2232%22 y=%2238%22 font-size=%2210%22 text-anchor=%22middle%22 fill=%22%239ca3af%22%3ENo image%3C/text%3E%3C/svg%3E'">
+                        <div class="flex-1 min-w-0">
+                            <p class="font-semibold text-sm truncate">${name}</p>
+                            <p class="text-xs text-gray-500 mt-0.5">
+                                ${item.color ? 'Color: ' + item.color + ' &nbsp;·&nbsp; ' : ''}Qty: ${qty}
+                            </p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-sm">$${lineTotal.toLocaleString("en-US", { minimumFractionDigits: 2 })}</p>
+                            <p class="text-[11px] text-gray-400">$${price.toLocaleString("en-US", { minimumFractionDigits: 2 })} each</p>
+                        </div>`;
+                    summary.appendChild(row);
+                });
+            }
+
+            const deliveryFee = calcDeliveryFee(total);
+
+            subtotalEl.textContent = fmt(total);
+            deliveryEl.textContent = fmt(deliveryFee);
+            payNowEl.textContent = fmt(deliveryFee);
+            totalEl.textContent = fmt(total);
+            badgeEl.textContent = totalQty + (totalQty === 1 ? " item" : " items");
+
+            window.__deliveryFee = deliveryFee;
+            window.__orderTotal = total;
+        })();
+
+        // ---------- FORM VALIDATION -> PAY BUTTON STATE ----------
+        const REQUIRED_FIELDS = ["email", "fname", "lname", "address", "house-no", "city", "country", "phone"];
+        const payBtn = document.getElementById("pay-btn");
+        const btnFee = document.getElementById("btn-fee");
+        const paySummary = document.getElementById("pay-summary");
+        const paySummaryText = document.getElementById("pay-summary-text");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+
+        const emailValid = () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
+        const phoneValid = () => phoneInput.value.replace(/\D/g, "").length >= 7;
+
+        function refreshPayState() {
+            emailInput.classList.toggle("invalid",
+                emailInput.value.trim() !== "" && !emailValid());
+
+            const allFilled = REQUIRED_FIELDS.every(id => {
+                const el = document.getElementById(id);
+                return el && el.value.trim() !== "";
+            });
+
+            const fee = window.__deliveryFee || 0;
+            const formReady = allFilled && emailValid() && phoneValid();
+            const hasItems = loadCheckoutCart().length > 0;
+
+            payBtn.disabled = !(formReady && hasItems);
+
+            if (!hasItems) {
+                paySummary.className = "pending flex items-center justify-center flex-wrap gap-2 rounded-xl border border-dashed border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-400 mb-5 transition";
+                paySummaryText.innerHTML = '<i class="fas fa-info-circle"></i> Your cart is empty — add items to pay the delivery fee';
+            } else if (!formReady) {
+                paySummary.className = "pending flex items-center justify-center flex-wrap gap-2 rounded-xl border border-dashed border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-400 mb-5 transition";
+                paySummaryText.textContent = "Complete your details to see the delivery fee";
+            } else {
+                paySummary.className = "flex items-center justify-center flex-wrap gap-2 rounded-xl border border-dashed border-red-200 bg-red-50 px-4 py-3 text-sm text-gray-600 mb-5 transition";
+                paySummaryText.innerHTML =
+                    `Pay delivery fee of <span class="font-bold text-payred">${fmt(fee)}</span> using ` +
+                    `<span class="inline-flex items-center gap-1 font-medium">Visa / MasterCard ` +
+                    `<i class="fab fa-cc-visa text-xl"></i><i class="fab fa-cc-mastercard text-xl"></i></span>`;
+            }
+
+            if (payBtn.disabled) {
+                const missing = REQUIRED_FIELDS.filter(id => {
+                    const el = document.getElementById(id);
+                    return !el || el.value.trim() === "";
+                }).length;
+                btnFee.textContent = !hasItems ? "Cart is empty" :
+                    (missing > 0 ? "Complete all fields to pay" : `Fee: ${fmt(fee)}`);
+            } else {
+                btnFee.textContent = `Delivery fee to pay: ${fmt(fee)}`;
+            }
+        }
+
+        REQUIRED_FIELDS.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.addEventListener("input", refreshPayState);
+                el.addEventListener("change", refreshPayState);
+            }
+        });
+
+        refreshPayState();
+
+        // ---------- REDIRECT (only when button enabled) ----------
+        function goToCard() {
+            if (payBtn.disabled) return; // safety net
+            window.location.href = "card.html";
+        }
+    </script>
+
+</body>
+
+</html>
